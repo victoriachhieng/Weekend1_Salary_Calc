@@ -47,14 +47,21 @@ function updateNewEmployee() {
     // start total salary at 0
     totalSalaries = 0;
     // target the employee
-    let outputElement = $('#employeeInfo');
+    let outputElement = $('#table');
     // empty it
     outputElement.empty();
     // loop through employees and display each employee
     for (let employee of employees) {
-        outputElement.append(`<p>${employee.firstName} ${employee.lastName} ${employee.idNumber} ${employee.jobTitle} ${employee.annualSalary} <p>`);
+        $('#table').append(`
+            <tr>
+                <td>${employee.firstName}</td>
+                <td>${employee.lastName}</td>
+                <td>${employee.idNumber}</td>
+                <td>${employee.jobTitle}</td>
+                <td>${employee.annualSalary}</td>
+                <tr>`);
         // add total salary of employees
-        totalSalaries += Number(employee.annualSalary)
+        totalSalaries += Number(employee.annualSalary);
     } // end for loop of employees
     console.log('totalSalaries', totalSalaries);
     calculateSalaries(totalSalaries);
@@ -67,4 +74,8 @@ function calculateSalaries(allSalaries) {
     let outputDiv = $('#monthlyCost');
     outputDiv.empty();
     outputDiv.append('<h2>Total Monthly: $' + Number(employeeSalaries.toFixed(2)) + '<h2>');
+    if( employeeSalaries > 20000){
+        outputDiv.css('')
+
+    } // end if employee salary is greater than $20,000
 } // end calculateSalaries
