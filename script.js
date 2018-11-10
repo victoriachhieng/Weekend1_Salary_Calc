@@ -44,13 +44,15 @@ function addEmployee() {
 
 function updateNewEmployee() {
     console.log('in updateNewEmployee');
+    totalSalaries = 0;
     // target the employee
     let outputElement = $('#employeeInfo');
     // empty it
     outputElement.empty();
     // loop through employees and display each employee
     for (let employee of employees) {
-        let displayNewEmployee = `<p>${employee.firstName} ${employee.lastName} ${employee.idNumber} ${employee.jobTitle} ${employee.annualSalary} <p>`;
-        outputElement.append(displayNewEmployee);
+        outputElement.append(`<p>${employee.firstName} ${employee.lastName} ${employee.idNumber} ${employee.jobTitle} ${employee.annualSalary} <p>`);
+        totalSalaries += Number(employee.annualSalary)
     } // end for loop of employees
+    console.log('totalSalaries', totalSalaries);
 } // end updateNewEmployee
