@@ -44,6 +44,7 @@ function addEmployee() {
 
 function updateNewEmployee() {
     console.log('in updateNewEmployee');
+    // start total salary at 0
     totalSalaries = 0;
     // target the employee
     let outputElement = $('#employeeInfo');
@@ -52,7 +53,18 @@ function updateNewEmployee() {
     // loop through employees and display each employee
     for (let employee of employees) {
         outputElement.append(`<p>${employee.firstName} ${employee.lastName} ${employee.idNumber} ${employee.jobTitle} ${employee.annualSalary} <p>`);
+        // add total salary of employees
         totalSalaries += Number(employee.annualSalary)
     } // end for loop of employees
     console.log('totalSalaries', totalSalaries);
+    calculateSalaries(totalSalaries);
 } // end updateNewEmployee
+
+function calculateSalaries(allSalaries) {
+    console.log('in calculateSalaries', allSalaries);
+    let employeeSalaries = allSalaries / 12;
+    console.log('in employeeSalaries', employeeSalaries);
+    let outputDiv = $('#monthlyCost');
+    outputDiv.empty();
+    outputDiv.append('<h2>Total Monthly: $' + Number(employeeSalaries.toFixed(2)) + '<h2>');
+} // end calculateSalaries
