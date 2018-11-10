@@ -1,9 +1,10 @@
 console.log('in JS');
 
 $(document).ready(readyNow);
+
 function readyNow() {
     console.log('in jQuery');
-   $('#addEmployeeButton').on('click', addEmployee);
+    $('#addEmployeeButton').on('click', addEmployee);
 } // end document ready
 
 // class for employees
@@ -17,28 +18,39 @@ class Employee {
     } // end constructor 
 } // end Employee class
 
-let employee = [];
-
-function displayEmployeeAdded(){
-    console.log('in displayEmployeeAdded');
-}
+let employees = [];
 
 function addEmployee() {
     console.log('in addEmployee');
     const addedEmployee = new Employee(
         $('#firstNameIn').val(),
         $('#lastNameIn').val(),
-        $('#idIn').val(),
-        $('#titleIn').val(),
+        $('#idNumberIn').val(),
+        $('#jobTitleIn').val(),
         $('#annualSalaryIn').val(),
     );
     console.log('adding employee');
     // push new employees into the array
-    employee.push(addedEmployee);
+    employees.push(addedEmployee);
     // empty inputs
-        $('#firstNameIn').val('');
-        $('#lastNameIn').val('');
-        $('#idIn').val('');
-        $('#titleIn').val('');
-        $('#annualSalaryIn').val('');
+    $('#firstNameIn').val('');
+    $('#lastNameIn').val('');
+    $('#idNumberIn').val('');
+    $('#jobTitleIn').val('');
+    $('#annualSalaryIn').val('');
+    updateNewEmployee();
 } // end addEmployee
+
+
+function updateNewEmployee() {
+    console.log('in updateNewEmployee');
+    // target the employee
+    let outputElement = $('#employeeInfo');
+    // empty it
+    outputElement.empty();
+    // loop through employees and display each employee
+    for (let employee of employees) {
+        let displayNewEmployee = `<p>${employee.firstName} ${employee.lastName} ${employee.idNumber} ${employee.jobTitle} ${employee.annualSalary} <p>`;
+        outputElement.append(displayNewEmployee);
+    } // end for loop of employees
+} // end updateNewEmployee

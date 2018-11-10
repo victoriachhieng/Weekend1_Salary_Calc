@@ -12,18 +12,22 @@
 </head>
 <body>
     <h1>Salary Calculator</h1>
-    <div>
+<!-- Add Employee Input -->
+<div id="inputDiv">
         <h1>Add Employee</h1>
         <input type="text" placeholder="First name" id="firstNameIn"/>
         <input type="text" placeholder="Last Name" id="lastNameIn"/>
-        <input type="text" placeholder="ID" id="idIn"/>
-        <input type="text" placeholder="Title" id="titleIn"/>
+        <input type="text" placeholder="ID" id="idNumberIn"/>
+        <input type="text" placeholder="Title" id="jobTitleIn"/>
         <input type="text" placeholder="Annual Salary" id="annualSalaryIn"/>
         <button id="addEmployeeButton">Submit</button>
     </div>
-    <div id="inputDiv">
         <h1>Employee</h1>
-        <!-- <table class="table table-striped">
+        <!-- Employee Info -->
+        <div id="employeeInfo">
+        </div>
+       <!-- <div>
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">First Name</th>
@@ -35,11 +39,11 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Victoria</td>
-                    <td>Chhieng</td>
-                    <td>123456</td>
-                    <td>Manager</td>
-                    <td>$50,000</td>
+                    <td class="firstNameTable"></td>
+                    <td class="lastNameTable"></td>
+                    <td class="idNumberTable"></td>
+                    <td class="jobTitleTable"></td>
+                    <td class="annualSalaryTable"></td>
                 </tr>
                 <tr>
                     <td>Andy</td>
@@ -49,10 +53,14 @@
                     <td>30,000</td>
                 </tr>
             </tbody>
-        </table> -->
-    </div>
-    <div id="outputDiv">
-        <h1>Total Monthly: $15,000</h1>
+        </table>
+    </div> -->
+
+
+    <!-- Monthly Output -->
+    <div id="Monthlyoutput">
+        <h2>Total Monthly:$15,000</h2>
     </div>
 </body>
 </html>
+
