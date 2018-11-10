@@ -20,6 +20,11 @@ class Employee {
 
 let employees = [];
 
+function deleteEmployee() {
+    console.log('in deleteEmployee')
+    $('#removeEmployee');
+} // end deleteEmployee
+
 function addEmployee() {
     console.log('in addEmployee');
     const addedEmployee = new Employee(
@@ -45,7 +50,7 @@ function addEmployee() {
 function updateNewEmployee() {
     console.log('in updateNewEmployee');
     // start total salary at 0
-    totalSalaries = 0;
+    let totalSalaries = 0;
     // target the employee
     let outputElement = $('#table');
     // empty it
@@ -53,13 +58,17 @@ function updateNewEmployee() {
     // loop through employees and display each employee
     for (let employee of employees) {
         $('#table').append(`
-            <tr>
+            <tr id="${employee.idNumber}">
                 <td>${employee.firstName}</td>
                 <td>${employee.lastName}</td>
                 <td>${employee.idNumber}</td>
                 <td>${employee.jobTitle}</td>
                 <td>${employee.annualSalary}</td>
+                <td><button id="${employee.idNumber}">Delete</button></td>
                 <tr>`);
+        $(`#${employee.idNumber}`).on('click', function(){
+            $(`#${employee.idNumber}`).remove();
+        })
         // add total salary of employees
         totalSalaries += Number(employee.annualSalary);
     } // end for loop of employees
@@ -74,7 +83,7 @@ function calculateSalaries(allSalaries) {
     let outputDiv = $('#monthlyCost');
     outputDiv.empty();
     outputDiv.append('<h2>Total Monthly: $' + Number(employeeSalaries.toFixed(2)) + '<h2>');
-    if( employeeSalaries > 20000){
+    if (employeeSalaries > 20000) {
         outputDiv.css('background-color', 'red');
     } // end if employee salary is greater than $20,000 change background color red
 } // end calculateSalaries

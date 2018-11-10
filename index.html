@@ -13,37 +13,41 @@
 </head>
 
 <body>
-    <h1>Salary Calculator</h1>
-    <!-- Add Employee Input -->
-    <div id="inputDiv">
-        <h1>Add Employee</h1>
-        <input type="text" placeholder="First name" id="firstNameIn" />
-        <input type="text" placeholder="Last Name" id="lastNameIn" />
-        <input type="text" placeholder="ID" id="idNumberIn" />
-        <input type="text" placeholder="Title" id="jobTitleIn" />
-        <input type="text" placeholder="Annual Salary" id="annualSalaryIn" />
-        <button id="addEmployeeButton">Submit</button>
-    </div>
-    <!-- Employee Info -->
-    <h1>Employee</h1>
-    <div>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">First Name</th>
-                    <th scope="col">Last Name</th>
-                    <th scope="col">ID</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Annual Salary</th>
-                </tr>
-            </thead>
-            <tbody id="table">
-            </tbody>
-        </table>
-    </div>
-    <!-- Monthly Output -->
-    <div id="monthlyCost">
-    </div>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Salary Calculator</h1>
+        </div>
+        <!-- Add Employee Input -->
+        <div id="inputDiv">
+            <h4 id="addedEmployee">Add Employee</h4>
+            <input type="text" placeholder="First name" id="firstNameIn" />
+            <input type="text" placeholder="Last Name" id="lastNameIn" />
+            <input type="text" placeholder="ID" id="idNumberIn" />
+            <input type="text" placeholder="Title" id="jobTitleIn" />
+            <input type="text" placeholder="Annual Salary" id="annualSalaryIn" />
+            <button id="addEmployeeButton">Submit</button>
+        </div>
+        <!-- Employee Info -->
+        <h4>Employees</h4>
+        <div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Annual Salary</th>
+                    </tr>
+                </thead>
+                <tbody id="table">
+                </tbody>
+            </table>
+            <!-- Delete Employee -->
+        </div>
+        <!-- Monthly Output -->
+        <div id="monthlyCost">
+        </div>
 </body>
 
 </html>
