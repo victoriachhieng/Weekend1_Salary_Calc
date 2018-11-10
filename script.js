@@ -75,7 +75,6 @@ function calculateSalaries(allSalaries) {
     outputDiv.empty();
     outputDiv.append('<h2>Total Monthly: $' + Number(employeeSalaries.toFixed(2)) + '<h2>');
     if( employeeSalaries > 20000){
-        outputDiv.css('')
-
-    } // end if employee salary is greater than $20,000
+        outputDiv.css('background-color', 'red');
+    } // end if employee salary is greater than $20,000 change background color red
 } // end calculateSalaries
