@@ -55,7 +55,7 @@ function updateNewEmployee() {
     let outputElement = $('#table');
     // empty it
     outputElement.empty();
-    // loop through employees and display each employee
+    // loop through employees and display each employee in the table
     for (let employee of employees) {
         $('#table').append(`
             <tr id="${employee.idNumber}">
@@ -66,9 +66,10 @@ function updateNewEmployee() {
                 <td>${employee.annualSalary}</td>
                 <td><button id="${employee.idNumber}">Delete</button></td>
                 <tr>`);
-        $(`#${employee.idNumber}`).on('click', function(){
+        // create jQuery Button
+        $(`#${employee.idNumber}`).on('click', function () {
             $(`#${employee.idNumber}`).remove();
-        })
+        }); // end on click function
         // add total salary of employees
         totalSalaries += Number(employee.annualSalary);
     } // end for loop of employees
@@ -76,9 +77,9 @@ function updateNewEmployee() {
     calculateSalaries(totalSalaries);
 } // end updateNewEmployee
 
-function calculateSalaries(allSalaries) {
-    console.log('in calculateSalaries', allSalaries);
-    let employeeSalaries = allSalaries / 12;
+function calculateSalaries(allsalries) {
+    console.log('in calculateSalaries', calculateSalaries);
+    let employeeSalaries = allsalries / 12;
     console.log('in employeeSalaries', employeeSalaries);
     let outputDiv = $('#monthlyCost');
     outputDiv.empty();
