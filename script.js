@@ -1,5 +1,3 @@
-console.log('in JS');
-
 $(document).ready(readyNow);
 
 function readyNow() {
@@ -78,7 +76,6 @@ function updateNewEmployee() {
 } // end updateNewEmployee
 
 function calculateSalaries(allsalries) {
-    console.log('in calculateSalaries', calculateSalaries);
     let employeeSalaries = allsalries / 12;
     console.log('in employeeSalaries', employeeSalaries);
     let outputDiv = $('#monthlyCost');
