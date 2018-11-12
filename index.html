@@ -15,23 +15,23 @@
 <body>
     <div class="container">
         <div class="jumbotron">
-            <h1>Salary Calculator</h1>
+            <h1 class="shadow p-3 mb-5 bg-white rounded text-center">Salary Calculator</h1>
         </div>
         <!-- Add Employee Input -->
         <div id="inputDiv">
-            <h4 id="addedEmployee">Add Employee</h4>
+            <h6 id="addedEmployee">Add Employee</h6>
             <input type="text" placeholder="First name" id="firstNameIn" />
             <input type="text" placeholder="Last Name" id="lastNameIn" />
             <input type="text" placeholder="ID" id="idNumberIn" />
             <input type="text" placeholder="Title" id="jobTitleIn" />
             <input type="text" placeholder="Annual Salary" id="annualSalaryIn" />
-            <button id="addEmployeeButton">Submit</button>
+            <button class="btn btn-outline-primary btn-sm" id="addEmployeeButton">Submit</button>
         </div>
         <!-- Employee Info -->
         <h4>Employees</h4>
         <div>
             <!-- Table Content -->
-            <table class="table table-striped">
+            <table class="table table-striped table-dark">
                 <thead>
                     <tr>
                         <th scope="col">First Name</th>
@@ -46,7 +46,7 @@
             </table>
         </div>
         <!-- Monthly Output -->
-        <div id="monthlyCost">
+        <div class="text-right" id="monthlyCost">
         </div>
 </body>
 

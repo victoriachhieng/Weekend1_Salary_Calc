@@ -64,7 +64,7 @@ function updateNewEmployee() {
                 <td>${employee.idNumber}</td>
                 <td>${employee.jobTitle}</td>
                 <td>${employee.annualSalary}</td>
-                <td><button id="${employee.idNumber}">Delete</button></td>
+                <td><button class="btn btn-danger" id="${employee.idNumber}">Delete</button></td>
                 <tr>`);
         // create jQuery Button
         $(`#${employee.idNumber}`).on('click', function () {
